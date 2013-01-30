@@ -9,6 +9,12 @@ namespace PasswordEncryptionApplication
     {
         private String masterKey;
 
+
+        public void setMasterKey(String newKey)
+        {
+            masterKey = newKey;
+        }
+
         /// <summary>
         /// Super weak encryption routine to test other functionality.
         /// </summary>
@@ -33,18 +39,26 @@ namespace PasswordEncryptionApplication
         /// </summary>
         /// <param name="toDecrypt">String to be decrypted.</param>
         /// <returns>Decrypted String</returns>
-        public String Decrypt(String toDecrypt)
+        public String Decrypt(String toDecrypt, String masterKey)
         {
-            char[] decrypt = toDecrypt.ToCharArray();
-
-            for (int i = 0; i < decrypt.Length; i++)
+            if (masterKey.Equals(this.masterKey))
             {
-                decrypt[i] = (char)((int)decrypt[i] / 2);
-            }
+                char[] decrypt = toDecrypt.ToCharArray();
 
-            StringBuilder strBuilder = new StringBuilder();
-            strBuilder.Append(decrypt);
-            return strBuilder.ToString();
+                for (int i = 0; i < decrypt.Length; i++)
+                {
+                    decrypt[i] = (char)((int)decrypt[i] / 2);
+                }
+
+                StringBuilder strBuilder = new StringBuilder();
+                strBuilder.Append(decrypt);
+                return strBuilder.ToString();
+
+            }
+            else
+            {
+                return "Wrong key";
+            }
         }
     }
 }

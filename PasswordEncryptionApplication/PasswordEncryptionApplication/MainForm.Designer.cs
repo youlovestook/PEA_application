@@ -32,15 +32,18 @@
             this.domainTab = new System.Windows.Forms.TabPage();
             this.noteTab = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.masterKeyTextBox = new System.Windows.Forms.TextBox();
             this.masterKeyEnterBtn = new System.Windows.Forms.Button();
+            this.masterKeyTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.addBtn = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
             this.removeBtn = new System.Windows.Forms.Button();
+            this.changeMasterKeyBtn = new System.Windows.Forms.Button();
+            this.domainListBox = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
+            this.domainTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +60,7 @@
             // 
             // domainTab
             // 
+            this.domainTab.Controls.Add(this.domainListBox);
             this.domainTab.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.domainTab.Location = new System.Drawing.Point(4, 22);
             this.domainTab.Name = "domainTab";
@@ -87,14 +91,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Master Key:";
             // 
-            // masterKeyTextBox
-            // 
-            this.masterKeyTextBox.Location = new System.Drawing.Point(7, 20);
-            this.masterKeyTextBox.Name = "masterKeyTextBox";
-            this.masterKeyTextBox.Size = new System.Drawing.Size(156, 20);
-            this.masterKeyTextBox.TabIndex = 0;
-            this.masterKeyTextBox.UseSystemPasswordChar = true;
-            // 
             // masterKeyEnterBtn
             // 
             this.masterKeyEnterBtn.Location = new System.Drawing.Point(169, 18);
@@ -103,6 +99,14 @@
             this.masterKeyEnterBtn.TabIndex = 1;
             this.masterKeyEnterBtn.Text = "Enter";
             this.masterKeyEnterBtn.UseVisualStyleBackColor = true;
+            // 
+            // masterKeyTextBox
+            // 
+            this.masterKeyTextBox.Location = new System.Drawing.Point(7, 20);
+            this.masterKeyTextBox.Name = "masterKeyTextBox";
+            this.masterKeyTextBox.Size = new System.Drawing.Size(156, 20);
+            this.masterKeyTextBox.TabIndex = 0;
+            this.masterKeyTextBox.UseSystemPasswordChar = true;
             // 
             // groupBox2
             // 
@@ -115,13 +119,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Domain Search:";
             // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Location = new System.Drawing.Point(7, 20);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(167, 20);
-            this.searchTextBox.TabIndex = 0;
-            // 
             // searchBtn
             // 
             this.searchBtn.Location = new System.Drawing.Point(181, 18);
@@ -131,6 +128,13 @@
             this.searchBtn.Text = "Go";
             this.searchBtn.UseVisualStyleBackColor = true;
             // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(7, 20);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(167, 20);
+            this.searchTextBox.TabIndex = 0;
+            // 
             // addBtn
             // 
             this.addBtn.Location = new System.Drawing.Point(16, 403);
@@ -139,6 +143,7 @@
             this.addBtn.TabIndex = 3;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // editBtn
             // 
@@ -160,11 +165,30 @@
             this.removeBtn.Text = "Remove";
             this.removeBtn.UseVisualStyleBackColor = true;
             // 
+            // changeMasterKeyBtn
+            // 
+            this.changeMasterKeyBtn.Location = new System.Drawing.Point(364, 403);
+            this.changeMasterKeyBtn.Name = "changeMasterKeyBtn";
+            this.changeMasterKeyBtn.Size = new System.Drawing.Size(116, 23);
+            this.changeMasterKeyBtn.TabIndex = 4;
+            this.changeMasterKeyBtn.Text = "Change Master Key";
+            this.changeMasterKeyBtn.UseVisualStyleBackColor = true;
+            // 
+            // domainListBox
+            // 
+            this.domainListBox.FormattingEnabled = true;
+            this.domainListBox.Location = new System.Drawing.Point(0, 0);
+            this.domainListBox.MultiColumn = true;
+            this.domainListBox.Name = "domainListBox";
+            this.domainListBox.Size = new System.Drawing.Size(456, 303);
+            this.domainListBox.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 438);
+            this.Controls.Add(this.changeMasterKeyBtn);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.editBtn);
             this.Controls.Add(this.addBtn);
@@ -174,6 +198,7 @@
             this.Name = "MainForm";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
+            this.domainTab.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -196,6 +221,8 @@
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Button removeBtn;
+        private System.Windows.Forms.Button changeMasterKeyBtn;
+        private System.Windows.Forms.ListBox domainListBox;
     }
 }
 
