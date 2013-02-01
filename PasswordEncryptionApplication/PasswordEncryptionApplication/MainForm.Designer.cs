@@ -41,7 +41,10 @@
             this.editBtn = new System.Windows.Forms.Button();
             this.removeBtn = new System.Windows.Forms.Button();
             this.changeMasterKeyBtn = new System.Windows.Forms.Button();
-            this.domainListBox = new System.Windows.Forms.ListBox();
+            this.domainListView = new System.Windows.Forms.ListView();
+            this.domainColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.usernameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.passwordColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.domainTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -60,7 +63,7 @@
             // 
             // domainTab
             // 
-            this.domainTab.Controls.Add(this.domainListBox);
+            this.domainTab.Controls.Add(this.domainListView);
             this.domainTab.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.domainTab.Location = new System.Drawing.Point(4, 22);
             this.domainTab.Name = "domainTab";
@@ -174,14 +177,35 @@
             this.changeMasterKeyBtn.Text = "Change Master Key";
             this.changeMasterKeyBtn.UseVisualStyleBackColor = true;
             // 
-            // domainListBox
+            // domainListView
             // 
-            this.domainListBox.FormattingEnabled = true;
-            this.domainListBox.Location = new System.Drawing.Point(0, 0);
-            this.domainListBox.MultiColumn = true;
-            this.domainListBox.Name = "domainListBox";
-            this.domainListBox.Size = new System.Drawing.Size(456, 303);
-            this.domainListBox.TabIndex = 0;
+            this.domainListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.domainColumn,
+            this.usernameColumn,
+            this.passwordColumn});
+            this.domainListView.FullRowSelect = true;
+            this.domainListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.domainListView.Location = new System.Drawing.Point(0, 0);
+            this.domainListView.Name = "domainListView";
+            this.domainListView.Size = new System.Drawing.Size(456, 306);
+            this.domainListView.TabIndex = 0;
+            this.domainListView.UseCompatibleStateImageBehavior = false;
+            this.domainListView.View = System.Windows.Forms.View.Details;
+            // 
+            // domainColumn
+            // 
+            this.domainColumn.Text = "Domain";
+            this.domainColumn.Width = 152;
+            // 
+            // usernameColumn
+            // 
+            this.usernameColumn.Text = "Username";
+            this.usernameColumn.Width = 152;
+            // 
+            // passwordColumn
+            // 
+            this.passwordColumn.Text = "Password";
+            this.passwordColumn.Width = 152;
             // 
             // MainForm
             // 
@@ -195,6 +219,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(512, 476);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
@@ -222,7 +248,10 @@
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.Button changeMasterKeyBtn;
-        private System.Windows.Forms.ListBox domainListBox;
+        private System.Windows.Forms.ListView domainListView;
+        private System.Windows.Forms.ColumnHeader domainColumn;
+        private System.Windows.Forms.ColumnHeader usernameColumn;
+        private System.Windows.Forms.ColumnHeader passwordColumn;
     }
 }
 

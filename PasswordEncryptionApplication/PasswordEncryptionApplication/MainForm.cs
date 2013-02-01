@@ -36,6 +36,5 @@ namespace PasswordEncryptionApplication
             Thread addForm = new Thread(new ThreadStart(OpenAddEditForm));
             addForm.Start();
         }
-
     }
 }
