@@ -15,5 +15,21 @@ namespace PasswordEncryptionApplication
         {
             InitializeComponent();
         }
+
+        public void here(object sender, EventArgs e)
+        {
+
+         
+        MessageBox.Show(textBox3.Text);
+        
+        int passwordScore = PasswordStrength.CheckThePasswordStrength(textBox3.Text);
+        string scoreAsString = passwordScore.ToString();
+
+
+        MessageBox.Show(scoreAsString);
+        }
+        
     }
-}
+
+}    
+
