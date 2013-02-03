@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.Collections;
 
 namespace PasswordEncryptionApplication
 {
@@ -15,6 +16,7 @@ namespace PasswordEncryptionApplication
         public MainForm()
         {
             InitializeComponent();
+            printLabels();
         }
 
         #region Utility Methods
@@ -27,6 +29,25 @@ namespace PasswordEncryptionApplication
             Application.Run(new AddEditForm());
         }
 
+        /// <summary>
+        /// Print the entries to the Domain List View
+        /// </summary>
+        private void printLabels()
+        {
+            ImportExportHelper impExpHelper = new ImportExportHelper("pf.txt");
+            ArrayList entries = EntryFactory.CreateEntries(impExpHelper.ImportFile());
+            
+            foreach (Entry entry in entries)
+            {
+                this.domainListView.Items.Add(new ListViewItem(new string[] 
+                {
+                    entry.Domain, entry.Username, entry.Password
+                }));
+            }
+
+            
+        }
+
         #endregion
 
         // Event Handlers
@@ -35,6 +56,11 @@ namespace PasswordEncryptionApplication
         {
             Thread addForm = new Thread(new ThreadStart(OpenAddEditForm));
             addForm.Start();
+        }
+
+        private void domainListView_ItemActivate(object sender, EventArgs e)
+        {
+            MessageBox.Show("ItemClicked");
         }
     }
 }

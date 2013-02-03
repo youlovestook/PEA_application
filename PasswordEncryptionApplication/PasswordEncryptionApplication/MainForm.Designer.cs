@@ -30,6 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.domainTab = new System.Windows.Forms.TabPage();
+            this.domainListView = new System.Windows.Forms.ListView();
+            this.domainColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.usernameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.passwordColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.noteTab = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.masterKeyEnterBtn = new System.Windows.Forms.Button();
@@ -41,10 +45,6 @@
             this.editBtn = new System.Windows.Forms.Button();
             this.removeBtn = new System.Windows.Forms.Button();
             this.changeMasterKeyBtn = new System.Windows.Forms.Button();
-            this.domainListView = new System.Windows.Forms.ListView();
-            this.domainColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.usernameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.passwordColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.domainTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -72,6 +72,37 @@
             this.domainTab.TabIndex = 0;
             this.domainTab.Text = "Domains";
             this.domainTab.UseVisualStyleBackColor = true;
+            // 
+            // domainListView
+            // 
+            this.domainListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.domainColumn,
+            this.usernameColumn,
+            this.passwordColumn});
+            this.domainListView.FullRowSelect = true;
+            this.domainListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.domainListView.Location = new System.Drawing.Point(0, 0);
+            this.domainListView.Name = "domainListView";
+            this.domainListView.Size = new System.Drawing.Size(456, 306);
+            this.domainListView.TabIndex = 0;
+            this.domainListView.UseCompatibleStateImageBehavior = false;
+            this.domainListView.View = System.Windows.Forms.View.Details;
+            this.domainListView.ItemActivate += new System.EventHandler(this.domainListView_ItemActivate);
+            // 
+            // domainColumn
+            // 
+            this.domainColumn.Text = "Domain";
+            this.domainColumn.Width = 152;
+            // 
+            // usernameColumn
+            // 
+            this.usernameColumn.Text = "Username";
+            this.usernameColumn.Width = 152;
+            // 
+            // passwordColumn
+            // 
+            this.passwordColumn.Text = "Password";
+            this.passwordColumn.Width = 152;
             // 
             // noteTab
             // 
@@ -176,36 +207,6 @@
             this.changeMasterKeyBtn.TabIndex = 4;
             this.changeMasterKeyBtn.Text = "Change Master Key";
             this.changeMasterKeyBtn.UseVisualStyleBackColor = true;
-            // 
-            // domainListView
-            // 
-            this.domainListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.domainColumn,
-            this.usernameColumn,
-            this.passwordColumn});
-            this.domainListView.FullRowSelect = true;
-            this.domainListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.domainListView.Location = new System.Drawing.Point(0, 0);
-            this.domainListView.Name = "domainListView";
-            this.domainListView.Size = new System.Drawing.Size(456, 306);
-            this.domainListView.TabIndex = 0;
-            this.domainListView.UseCompatibleStateImageBehavior = false;
-            this.domainListView.View = System.Windows.Forms.View.Details;
-            // 
-            // domainColumn
-            // 
-            this.domainColumn.Text = "Domain";
-            this.domainColumn.Width = 152;
-            // 
-            // usernameColumn
-            // 
-            this.usernameColumn.Text = "Username";
-            this.usernameColumn.Width = 152;
-            // 
-            // passwordColumn
-            // 
-            this.passwordColumn.Text = "Password";
-            this.passwordColumn.Width = 152;
             // 
             // MainForm
             // 
