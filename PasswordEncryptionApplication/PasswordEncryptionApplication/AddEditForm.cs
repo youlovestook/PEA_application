@@ -16,7 +16,7 @@ namespace PasswordEncryptionApplication
             InitializeComponent();
         }
 
-        public void here(object sender, EventArgs e)
+        public void strengthButtonEvent(object sender, EventArgs e)
         {
 
          

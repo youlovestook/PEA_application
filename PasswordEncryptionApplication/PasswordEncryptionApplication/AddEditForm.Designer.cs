@@ -80,6 +80,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(235, 20);
             this.textBox3.TabIndex = 4;
+            this.textBox3.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -96,6 +97,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(235, 20);
             this.textBox4.TabIndex = 6;
+            this.textBox4.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -139,7 +141,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "check strength";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.here);
+            this.button2.Click += new System.EventHandler(this.strengthButtonEvent);
             // 
             // AddEditForm
             // 
