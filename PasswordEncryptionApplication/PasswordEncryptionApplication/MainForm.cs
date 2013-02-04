@@ -22,11 +22,19 @@ namespace PasswordEncryptionApplication
         #region Utility Methods
         
         /// <summary>
-        /// Opens the AddEditForm
+        /// Opens the AddForm
         /// </summary>
-        public static void OpenAddEditForm()
+        public static void OpenAddForm()
         {
-            Application.Run(new AddEditForm());
+            Application.Run(new AddForm());
+        }
+
+        /// <summary>
+        /// Opens the EditForm
+        /// </summary>
+        public static void OpenEditForm()
+        {
+            Application.Run(new EditForm());
         }
 
         /// <summary>
@@ -54,13 +62,19 @@ namespace PasswordEncryptionApplication
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            Thread addForm = new Thread(new ThreadStart(OpenAddEditForm));
+            Thread addForm = new Thread(new ThreadStart(OpenAddForm));
             addForm.Start();
         }
 
         private void domainListView_ItemActivate(object sender, EventArgs e)
         {
-            MessageBox.Show("ItemClicked");
+            MessageBox.Show("");
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            Thread editForm = new Thread(new ThreadStart(OpenEditForm));
+            editForm.Start();
         }
     }
 }
