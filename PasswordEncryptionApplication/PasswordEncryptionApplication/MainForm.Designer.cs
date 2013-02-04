@@ -181,13 +181,13 @@
             // 
             // editBtn
             // 
-            this.editBtn.Enabled = false;
             this.editBtn.Location = new System.Drawing.Point(97, 403);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(75, 23);
             this.editBtn.TabIndex = 3;
             this.editBtn.Text = "Edit";
             this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // removeBtn
             // 
