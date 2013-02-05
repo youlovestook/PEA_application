@@ -20,7 +20,7 @@ namespace PasswordEncryptionApplication
   public class PasswordStrength
     {
 
-        public static int CheckThePasswordStrength(string password)
+        public static int checkStrength(string password)
         {
             int score = 1;
             
