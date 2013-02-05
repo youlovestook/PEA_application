@@ -141,7 +141,7 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.here);
             // 
-            // AddEditForm
+            // EditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,8 +158,8 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Name = "AddEditForm";
-            this.Text = "Add/Edit Form";
+            this.Name = "EditForm";
+            this.Text = "Edit Form";
             this.ResumeLayout(false);
             this.PerformLayout();
 

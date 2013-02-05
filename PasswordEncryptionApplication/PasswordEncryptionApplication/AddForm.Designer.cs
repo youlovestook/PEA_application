@@ -130,6 +130,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "ENTER";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.comparePasswords);
             // 
             // button2
             // 
@@ -141,7 +142,7 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.here);
             // 
-            // AddEditForm
+            // AddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,8 +159,8 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Name = "AddEditForm";
-            this.Text = "Add/Edit Form";
+            this.Name = "AddForm";
+            this.Text = "Add Form";
             this.ResumeLayout(false);
             this.PerformLayout();
 

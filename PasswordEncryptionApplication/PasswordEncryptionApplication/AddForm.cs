@@ -28,6 +28,28 @@ namespace PasswordEncryptionApplication
 
         MessageBox.Show(scoreAsString);
         }
+
+        private void comparePasswords(object sender, EventArgs e)
+        {
+          string firstPassword = textBox3.Text;
+          string secondPassword = textBox4.Text;
+   
+            if (firstPassword == secondPassword) 
+            {
+
+                MessageBox.Show("passwords match");
+
+            } 
+            else
+            {
+                MessageBox.Show("the passwords do not match");
+
+            }
+ 
+
+
+
+        }
         
     }
 
