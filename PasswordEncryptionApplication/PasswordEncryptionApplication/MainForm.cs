@@ -43,9 +43,9 @@ namespace PasswordEncryptionApplication
         private void printLabels()
         {
             ImportExportHelper impExpHelper = new ImportExportHelper("pf.txt");
-            ArrayList entries = EntryFactory.CreateEntries(impExpHelper.ImportFile());
+            EntryFactory.CreateEntries(impExpHelper.ImportFile());
             
-            foreach (Entry entry in entries)
+            foreach (Entry entry in EntryFactory.GetList())
             {
                 this.domainListView.Items.Add(new ListViewItem(new string[] 
                 {
