@@ -13,6 +13,8 @@ namespace PasswordEncryptionApplication
 {
     public partial class MainForm : Form
     {
+        Controller controller = new Controller();
+        
         public MainForm()
         {
             InitializeComponent();
@@ -21,25 +23,6 @@ namespace PasswordEncryptionApplication
 
         #region Utility Methods
         
-        /// <summary>
-        /// Opens the AddForm
-        /// </summary>
-        public static void OpenAddForm()
-        {
-            Application.Run(new AddForm());
-        }
-
-        /// <summary>
-        /// Opens the EditForm
-        /// </summary>
-        public static void OpenEditForm()
-        {
-            Application.Run(new EditForm());
-        }
-
-        /// <summary>
-        /// Print the entries to the Domain List View
-        /// </summary>
         private void printLabels()
         {
             ImportExportHelper impExpHelper = new ImportExportHelper("pf.txt");
@@ -62,8 +45,12 @@ namespace PasswordEncryptionApplication
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            Thread addForm = new Thread(new ThreadStart(OpenAddForm));
-            addForm.Start();
+            controller.OpenForm("AddForm");
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            controller.OpenForm("EditForm");
         }
 
         private void domainListView_ItemActivate(object sender, EventArgs e)
@@ -71,10 +58,5 @@ namespace PasswordEncryptionApplication
             MessageBox.Show("");
         }
 
-        private void editBtn_Click(object sender, EventArgs e)
-        {
-            Thread editForm = new Thread(new ThreadStart(OpenEditForm));
-            editForm.Start();
-        }
     }
 }
