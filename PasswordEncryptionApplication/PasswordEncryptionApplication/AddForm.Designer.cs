@@ -140,16 +140,16 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(382, 88);
+            this.panel1.Location = new System.Drawing.Point(395, 88);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(110, 26);
+            this.panel1.Size = new System.Drawing.Size(97, 26);
             this.panel1.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 7);
+            this.label6.Location = new System.Drawing.Point(26, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(0, 20);
             this.label6.TabIndex = 13;
