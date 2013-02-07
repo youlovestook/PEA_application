@@ -9,7 +9,7 @@ namespace PasswordEncryptionApplication
 {
     /// <summary>
     /// Encrypt / Decrypt Class: 
-    /// Based on knowledge from http://www.superstarcoders.com
+    /// Based on article from http://www.superstarcoders.com
     /// </summary>
     class Cryption
     {

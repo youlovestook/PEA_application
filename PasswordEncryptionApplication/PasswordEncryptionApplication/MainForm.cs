@@ -18,28 +18,9 @@ namespace PasswordEncryptionApplication
         public MainForm()
         {
             InitializeComponent();
-            printLabels();
+            controller.ImportEntries();
+            controller.DisplayEntries(domainListView);
         }
-
-        #region Utility Methods
-        
-        private void printLabels()
-        {
-            ImportExportHelper impExpHelper = new ImportExportHelper("pf.txt");
-            EntryFactory.CreateEntries(impExpHelper.ImportFile());
-            
-            foreach (Entry entry in EntryFactory.GetList())
-            {
-                this.domainListView.Items.Add(new ListViewItem(new string[] 
-                {
-                    entry.Domain, entry.Username, entry.Password
-                }));
-            }
-
-            
-        }
-
-        #endregion
 
         // Event Handlers
 

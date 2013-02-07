@@ -9,27 +9,31 @@ namespace PasswordEncryptionApplication
 {
     class FormThreads
     {
+        /// <summary>
+        /// Adds a new thread. If new Form is added, Add the thread here.
+        /// </summary>
+        /// <param name="threadName">The name of the Form.</param>
         public static void addThread(string threadName)
         {
-            //Threads t = new Threads();
             switch (threadName)
             {
                 case "AddForm":
-                    Thread addForm = new Thread(new ThreadStart(OpenAddForm));
+                    Thread addForm = new Thread(new ThreadStart(openAddForm));
                     addForm.Start();
                     break;
                 case "EditForm":
-                    Thread editForm = new Thread(new ThreadStart(OpenEditForm));
+                    Thread editForm = new Thread(new ThreadStart(openEditForm));
                     editForm.Start();
                     break;
                 default:
                     throw new Exception(threadName + " not supported.");
             }
         }
+
         /// <summary>
         /// Opens the AddForm
         /// </summary>
-        public static void OpenAddForm()
+        private static void openAddForm()
         {
             Application.Run(new AddForm());
         }
@@ -37,7 +41,7 @@ namespace PasswordEncryptionApplication
         /// <summary>
         /// Opens the EditForm
         /// </summary>
-        public static void OpenEditForm()
+        private static void openEditForm()
         {
             Application.Run(new EditForm());
         }
