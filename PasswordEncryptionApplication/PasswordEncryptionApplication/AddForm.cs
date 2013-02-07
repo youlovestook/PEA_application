@@ -27,7 +27,7 @@ namespace PasswordEncryptionApplication
             
            // MessageBox.Show(scoreAsString);
            
-            if (passwordScore > 2)
+            if (passwordScore > 0)
             {
                 
                 panel1.BackColor = Color.Red;
