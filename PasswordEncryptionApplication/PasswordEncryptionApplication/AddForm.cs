@@ -37,13 +37,13 @@ namespace PasswordEncryptionApplication
             {
                
                 panel1.BackColor = Color.Yellow;
-                label6.Text = "MEDIUM";
+                label6.Text = "OKAY";
             }
             if (passwordScore > 5)
             {
                // panel1.BackColor = DefaultBackColor;
                 panel1.BackColor = Color.Green;
-                label6.Text = "STRONG";
+                label6.Text = "BEST";
             } 
         }
 
