@@ -27,6 +27,16 @@ namespace PasswordEncryptionApplication
         }
 
         /// <summary>
+        /// Creates an Entry Object for decrypting and encrypting.
+        /// </summary>
+        /// <param name="entries"></param>
+        /// <returns>Entry Object</returns>
+        public static Entry CreateTempEntry(String[] entries)
+        {
+            return new Entry(entries[0], entries[2], entries[2]);
+        }
+
+        /// <summary>
         /// Add to the list.
         /// </summary>
         /// <param name="e">Entry object</param>

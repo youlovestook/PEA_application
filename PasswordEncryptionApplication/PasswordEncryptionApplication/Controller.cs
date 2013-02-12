@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace PasswordEncryptionApplication
 {
@@ -42,6 +43,54 @@ namespace PasswordEncryptionApplication
             }           
         }
 
+        /// <summary>
+        /// Encrypts the user selected row.
+        /// </summary>
+        /// <param name="lView">ListView Item.</param>
+        /// <param name="masterKey">The master key.</param>
+        public void EncryptRow(ListView lView, String masterKey)
+        {
+
+            String domain =  lView.SelectedItems[0].SubItems[0].Text;
+            String username = lView.SelectedItems[0].SubItems[1].Text; 
+            String password = lView.SelectedItems[0].SubItems[2].Text; 
+                             
+            
+            String[] row = {
+                            Cryption.Encrypt<AesManaged>(domain, masterKey, "salt"),
+                            Cryption.Encrypt<AesManaged>(username, masterKey, "salt"),
+                            Cryption.Encrypt<AesManaged>(password, masterKey, "salt")};
+
+            Entry temp = EntryFactory.CreateTempEntry(row);
+            lView.SelectedItems[0].SubItems[0].Text = temp.Domain;
+            lView.SelectedItems[0].SubItems[1].Text = temp.Username;
+            lView.SelectedItems[0].SubItems[2].Text = temp.Password;
+        }
+
+        public void DecryptRow(ListView lView, String masterKey)
+        {
+
+            String domain = lView.SelectedItems[0].SubItems[0].Text;
+            String username = lView.SelectedItems[0].SubItems[1].Text;
+            String password = lView.SelectedItems[0].SubItems[2].Text;
+
+
+            String[] row = {
+                            Cryption.Decrypt<AesManaged>(domain, masterKey, "salt"),
+                            Cryption.Decrypt<AesManaged>(username, masterKey, "salt"),
+                            Cryption.Decrypt<AesManaged>(password, masterKey, "salt")};
+
+            Entry temp = EntryFactory.CreateTempEntry(row);
+            lView.SelectedItems[0].SubItems[0].Text = temp.Domain;
+            lView.SelectedItems[0].SubItems[1].Text = temp.Username;
+            lView.SelectedItems[0].SubItems[2].Text = temp.Password;
+        }
+
+        public Boolean CheckMasterKey(String masterKey)
+        {
+            return masterKey.Equals("Test");
+        }
+    
 
     }
 }

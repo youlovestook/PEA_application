@@ -133,6 +133,7 @@
             this.masterKeyEnterBtn.TabIndex = 1;
             this.masterKeyEnterBtn.Text = "Enter";
             this.masterKeyEnterBtn.UseVisualStyleBackColor = true;
+            this.masterKeyEnterBtn.Click += new System.EventHandler(this.masterKeyEnterBtn_Click);
             // 
             // masterKeyTextBox
             // 

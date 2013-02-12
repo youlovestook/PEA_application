@@ -36,7 +36,13 @@ namespace PasswordEncryptionApplication
 
         private void domainListView_ItemActivate(object sender, EventArgs e)
         {
-            MessageBox.Show("");
+            controller.EncryptRow(domainListView, "Test");
+        }
+
+        private void masterKeyEnterBtn_Click(object sender, EventArgs e)
+        {
+            //TODO: Finish...
+            controller.CheckMasterKey(masterKeyTextBox.Text).ToString();
         }
 
     }
