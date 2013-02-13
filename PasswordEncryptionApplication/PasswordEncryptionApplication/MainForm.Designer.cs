@@ -224,7 +224,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(512, 476);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Password Encryption Application";
             this.tabControl1.ResumeLayout(false);
             this.domainTab.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
