@@ -8,12 +8,13 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.Collections;
+using PasswordEncryptionApplication.Controller;
 
 namespace PasswordEncryptionApplication.View
 {
     public partial class MainForm : Form
     {
-        Controller controller = new Controller();
+        Controller.Controller controller = new Controller.Controller();
         
         public MainForm()
         {
