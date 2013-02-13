@@ -15,7 +15,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-namespace PasswordEncryptionApplication
+namespace PasswordEncryptionApplication.Model
 {
   public class PasswordStrength
     {

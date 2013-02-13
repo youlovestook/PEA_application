@@ -1,4 +1,4 @@
-﻿namespace PasswordEncryptionApplication
+﻿namespace PasswordEncryptionApplication.View
 {
     partial class AddForm
     {

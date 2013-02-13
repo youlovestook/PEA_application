@@ -5,7 +5,7 @@ using System.Text;
 using System.Security.Cryptography;
 using System.IO;
 
-namespace PasswordEncryptionApplication
+namespace PasswordEncryptionApplication.Model
 {
     /// <summary>
     /// Encrypt / Decrypt Class: 

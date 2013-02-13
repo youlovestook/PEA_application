@@ -5,18 +5,26 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using PasswordEncryptionApplication.View;
+using PasswordEncryptionApplication.Model;
 
-namespace PasswordEncryptionApplication
+namespace PasswordEncryptionApplication.Controller
 {
     class Controller
     {
+
+        public void Start()
+        {
+            //TODO: implement on startup.
+        }
+
         /// <summary>
         /// Opens the specified Form
         /// </summary>
         /// <param name="formName">Name of the form. Case Sensitive.</param>
         public void OpenForm(String formName)
         {
-            FormThreads.addThread(formName);
+            ViewManager.addThread(formName);
         }
 
         /// <summary>

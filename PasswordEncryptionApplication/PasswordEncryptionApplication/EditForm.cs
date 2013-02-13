@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PasswordEncryptionApplication
+namespace PasswordEncryptionApplication.View
 {
     public partial class EditForm : Form
     {

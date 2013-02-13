@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Collections;
 
-namespace PasswordEncryptionApplication
+namespace PasswordEncryptionApplication.View
 {
     public partial class MainForm : Form
     {

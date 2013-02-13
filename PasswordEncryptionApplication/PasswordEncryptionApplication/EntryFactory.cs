@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 
-namespace PasswordEncryptionApplication
+namespace PasswordEncryptionApplication.Model
 {
     /// <summary>
     /// Creates and Holds Entry objects.
