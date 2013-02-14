@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.Security.Cryptography;
 
 namespace PasswordEncryptionApplication.Model
 {
@@ -42,7 +43,10 @@ namespace PasswordEncryptionApplication.Model
         /// <param name="e">Entry object</param>
         public static void Add(Entry e)
         {
-            entryList.Add(e);
+            String d = Cryption.Encrypt<AesManaged>(e.Domain, "Test", "salt");
+            String u = Cryption.Encrypt<AesManaged>(e.Username, "Test", "salt");
+            String p = Cryption.Encrypt<AesManaged>(e.Password, "Test", "salt");
+            entryList.Add(new Entry(d, u, p));
         }
 
         /// <summary>

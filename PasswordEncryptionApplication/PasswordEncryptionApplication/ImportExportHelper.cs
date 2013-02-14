@@ -61,6 +61,5 @@ namespace PasswordEncryptionApplication.Model
                 File.WriteAllText(filename, toWrite);
             }
         }
-
     }
 }

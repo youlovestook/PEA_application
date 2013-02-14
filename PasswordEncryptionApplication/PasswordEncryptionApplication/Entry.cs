@@ -20,7 +20,7 @@ namespace PasswordEncryptionApplication.Model
 
         public override String ToString()
         {
-            return Domain + "\t" + Username + "\t" + Password + "\n";
+            return Domain + "\t" + Username + "\t" + Password + "\r";
         }
     }
 }

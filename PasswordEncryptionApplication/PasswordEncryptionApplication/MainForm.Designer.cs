@@ -225,6 +225,7 @@
             this.MaximumSize = new System.Drawing.Size(512, 476);
             this.Name = "MainForm";
             this.Text = "Password Encryption Application";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.domainTab.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

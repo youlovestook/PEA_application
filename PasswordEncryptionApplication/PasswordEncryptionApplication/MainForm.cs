@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Collections;
 using PasswordEncryptionApplication.Controller;
+using PasswordEncryptionApplication.Model;
 
 namespace PasswordEncryptionApplication.View
 {
@@ -19,6 +20,10 @@ namespace PasswordEncryptionApplication.View
         public MainForm()
         {
             InitializeComponent();
+            //EntryFactory.Add(new Entry("Amazon", "phil.m", "bestPassword"));
+            //EntryFactory.Add(new Entry("Amazone", "phil.l", "least"));
+            //EntryFactory.Add(new Entry("Amazones", "phil.n", "worst"));
+            //EntryFactory.Add(new Entry("Amazonest", "phil.o", "bestP"));
             controller.ImportEntries();
             controller.DisplayEntries(domainListView);
         }
@@ -37,13 +42,17 @@ namespace PasswordEncryptionApplication.View
 
         private void domainListView_ItemActivate(object sender, EventArgs e)
         {
-            controller.EncryptRow(domainListView, "Test");
+            controller.DecryptRow(domainListView, "Test");
         }
 
         private void masterKeyEnterBtn_Click(object sender, EventArgs e)
         {
-            //TODO: Finish...
-            controller.CheckMasterKey(masterKeyTextBox.Text).ToString();
+
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            controller.Close();
         }
 
     }

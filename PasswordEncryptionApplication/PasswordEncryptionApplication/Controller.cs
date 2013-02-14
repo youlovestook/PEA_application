@@ -12,8 +12,15 @@ namespace PasswordEncryptionApplication.Controller
 {
     class Controller
     {
+
         public void Start()
         {
+        }
+
+        public void Close()
+        {
+            ImportExportHelper impExpHelper = new ImportExportHelper("pf.txt");
+            impExpHelper.ExportToFile(EntryFactory.GetList());
         }
 
         public void SaveConfigSettings(String email, String masterKey)
@@ -70,7 +77,8 @@ namespace PasswordEncryptionApplication.Controller
             String[] row = {
                             Cryption.Encrypt<AesManaged>(domain, masterKey, "salt"),
                             Cryption.Encrypt<AesManaged>(username, masterKey, "salt"),
-                            Cryption.Encrypt<AesManaged>(password, masterKey, "salt")};
+                            Cryption.Encrypt<AesManaged>(password, masterKey, "salt")
+                           };
 
             Entry temp = EntryFactory.CreateTempEntry(row);
             lView.SelectedItems[0].SubItems[0].Text = temp.Domain;
@@ -85,11 +93,11 @@ namespace PasswordEncryptionApplication.Controller
             String username = lView.SelectedItems[0].SubItems[1].Text;
             String password = lView.SelectedItems[0].SubItems[2].Text;
 
-
             String[] row = {
                             Cryption.Decrypt<AesManaged>(domain, masterKey, "salt"),
                             Cryption.Decrypt<AesManaged>(username, masterKey, "salt"),
-                            Cryption.Decrypt<AesManaged>(password, masterKey, "salt")};
+                            Cryption.Decrypt<AesManaged>(password, masterKey, "salt")
+                           };
 
             Entry temp = EntryFactory.CreateTempEntry(row);
             lView.SelectedItems[0].SubItems[0].Text = temp.Domain;
@@ -99,6 +107,7 @@ namespace PasswordEncryptionApplication.Controller
 
         public Boolean CheckMasterKey(String masterKey)
         {
+            return true;
         }
     
 
