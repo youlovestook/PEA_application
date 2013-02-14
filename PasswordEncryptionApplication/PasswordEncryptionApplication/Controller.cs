@@ -12,10 +12,13 @@ namespace PasswordEncryptionApplication.Controller
 {
     class Controller
     {
-
         public void Start()
         {
-            //TODO: implement on startup.
+        }
+
+        public void SaveConfigSettings(String email, String masterKey)
+        {
+            
         }
 
         /// <summary>
@@ -96,7 +99,6 @@ namespace PasswordEncryptionApplication.Controller
 
         public Boolean CheckMasterKey(String masterKey)
         {
-            return masterKey.Equals("Test");
         }
     
 
