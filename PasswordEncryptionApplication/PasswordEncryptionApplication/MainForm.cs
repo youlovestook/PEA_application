@@ -55,5 +55,10 @@ namespace PasswordEncryptionApplication.View
             controller.Close();
         }
 
+        private void changeMasterKeyBtn_Click(object sender, EventArgs e)
+        {
+            controller.OpenForm("SettingsForm");
+        }
+
     }
 }

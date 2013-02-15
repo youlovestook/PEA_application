@@ -202,12 +202,13 @@
             // 
             // changeMasterKeyBtn
             // 
-            this.changeMasterKeyBtn.Location = new System.Drawing.Point(364, 403);
+            this.changeMasterKeyBtn.Location = new System.Drawing.Point(424, 403);
             this.changeMasterKeyBtn.Name = "changeMasterKeyBtn";
-            this.changeMasterKeyBtn.Size = new System.Drawing.Size(116, 23);
+            this.changeMasterKeyBtn.Size = new System.Drawing.Size(56, 23);
             this.changeMasterKeyBtn.TabIndex = 4;
-            this.changeMasterKeyBtn.Text = "Change Master Key";
+            this.changeMasterKeyBtn.Text = "Settings";
             this.changeMasterKeyBtn.UseVisualStyleBackColor = true;
+            this.changeMasterKeyBtn.Click += new System.EventHandler(this.changeMasterKeyBtn_Click);
             // 
             // MainForm
             // 

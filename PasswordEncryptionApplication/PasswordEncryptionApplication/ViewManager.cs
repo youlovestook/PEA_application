@@ -25,6 +25,10 @@ namespace PasswordEncryptionApplication.View
                     Thread editForm = new Thread(new ThreadStart(openEditForm));
                     editForm.Start();
                     break;
+                case "SettingsForm":
+                    Thread settingsForm = new Thread(new ThreadStart(openSettingsForm));
+                    settingsForm.Start();
+                    break;
                 default:
                     throw new Exception(threadName + " not supported.");
             }
@@ -44,6 +48,11 @@ namespace PasswordEncryptionApplication.View
         private static void openEditForm()
         {
             Application.Run(new EditForm());
+        }
+
+        private static void openSettingsForm()
+        {
+            Application.Run(new SettingsForm());
         }
     }
 }

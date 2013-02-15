@@ -21,6 +21,7 @@ namespace PasswordEncryptionApplication.Controller
         {
             ImportExportHelper impExpHelper = new ImportExportHelper("pf.txt");
             impExpHelper.ExportToFile(EntryFactory.GetList());
+            ConfigManager.Save();
         }
 
         public void SaveConfigSettings(String email, String masterKey)
