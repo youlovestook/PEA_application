@@ -24,8 +24,9 @@ namespace PasswordEncryptionApplication.View
             //EntryFactory.Add(new Entry("Amazone", "phil.l", "least"));
             //EntryFactory.Add(new Entry("Amazones", "phil.n", "worst"));
             //EntryFactory.Add(new Entry("Amazonest", "phil.o", "bestP"));
-            controller.ImportEntries();
-            controller.DisplayEntries(domainListView);
+            //controller.ImportEntries();
+            controller.Start(domainListView);
+            //controller.DisplayEntries(domainListView);
         }
 
         // Event Handlers
@@ -47,7 +48,11 @@ namespace PasswordEncryptionApplication.View
 
         private void masterKeyEnterBtn_Click(object sender, EventArgs e)
         {
-
+            if (controller.CheckMasterKey(masterKeyTextBox.Text))
+            {
+                masterKeyTextBox.Text = "";
+                controller.PasswordIsValidated = true;
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -13,16 +13,15 @@ namespace PasswordEncryptionApplication.Model
 
         public static void Load()
         {
-            //TODO: Try to replace with Configuration manager
             Email = ConfigurationManager.AppSettings["Email"];
             MasterKey = ConfigurationManager.AppSettings["Master"];
         }
 
         public static void Save()
         {
-            ConfigurationManager.AppSettings["Email"] = Email;
+            //Doesn't work!!
+            ConfigurationManager.AppSettings.Set("Email", "Test");
             ConfigurationManager.AppSettings["Master"] = MasterKey;
-
         }
     }
 }

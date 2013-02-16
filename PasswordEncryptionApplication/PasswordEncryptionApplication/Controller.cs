@@ -12,11 +12,22 @@ namespace PasswordEncryptionApplication.Controller
 {
     class Controller
     {
+        public bool PasswordIsValidated { set; get; }
 
-        public void Start()
+        /// <summary>
+        /// Specifies what the Application does on start.
+        /// </summary>
+        public void Start(ListView lView)
         {
+            PasswordIsValidated = false;
+            ConfigManager.Load();
+            ImportEntries();
+            DisplayEntries(lView);
         }
 
+        /// <summary>
+        /// Specifies what the Application does on close.
+        /// </summary>
         public void Close()
         {
             ImportExportHelper impExpHelper = new ImportExportHelper("pf.txt");
@@ -89,26 +100,28 @@ namespace PasswordEncryptionApplication.Controller
 
         public void DecryptRow(ListView lView, String masterKey)
         {
+            if (PasswordIsValidated)
+            {
+                String domain = lView.SelectedItems[0].SubItems[0].Text;
+                String username = lView.SelectedItems[0].SubItems[1].Text;
+                String password = lView.SelectedItems[0].SubItems[2].Text;
 
-            String domain = lView.SelectedItems[0].SubItems[0].Text;
-            String username = lView.SelectedItems[0].SubItems[1].Text;
-            String password = lView.SelectedItems[0].SubItems[2].Text;
-
-            String[] row = {
+                String[] row = {
                             Cryption.Decrypt<AesManaged>(domain, masterKey, "salt"),
                             Cryption.Decrypt<AesManaged>(username, masterKey, "salt"),
                             Cryption.Decrypt<AesManaged>(password, masterKey, "salt")
                            };
 
-            Entry temp = EntryFactory.CreateTempEntry(row);
-            lView.SelectedItems[0].SubItems[0].Text = temp.Domain;
-            lView.SelectedItems[0].SubItems[1].Text = temp.Username;
-            lView.SelectedItems[0].SubItems[2].Text = temp.Password;
+                Entry temp = EntryFactory.CreateTempEntry(row);
+                //lView.SelectedItems[0].SubItems[0].Text = temp.Domain;
+                lView.SelectedItems[0].SubItems[1].Text = temp.Username;
+                lView.SelectedItems[0].SubItems[2].Text = temp.Password;
+            }
         }
 
         public Boolean CheckMasterKey(String masterKey)
         {
-            return true;
+            return (masterKey == ConfigManager.MasterKey);
         }
     
 

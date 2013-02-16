@@ -34,7 +34,7 @@ namespace PasswordEncryptionApplication.Model
         /// <returns>Entry Object</returns>
         public static Entry CreateTempEntry(String[] entries)
         {
-            return new Entry(entries[0], entries[2], entries[2]);
+            return new Entry(entries[0], entries[1], entries[2]);
         }
 
         /// <summary>
