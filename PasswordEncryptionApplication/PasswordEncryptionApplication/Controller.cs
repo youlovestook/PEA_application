@@ -98,6 +98,12 @@ namespace PasswordEncryptionApplication.Controller
             lView.SelectedItems[0].SubItems[2].Text = temp.Password;
         }
 
+
+        /// <summary>
+        /// Decrypts the selected row
+        /// </summary>
+        /// <param name="lView">ListView item</param>
+        /// <param name="masterKey">The masterkey</param>
         public void DecryptRow(ListView lView, String masterKey)
         {
             if (PasswordIsValidated)
@@ -113,7 +119,7 @@ namespace PasswordEncryptionApplication.Controller
                            };
 
                 Entry temp = EntryFactory.CreateTempEntry(row);
-                //lView.SelectedItems[0].SubItems[0].Text = temp.Domain;
+                lView.SelectedItems[0].SubItems[0].Text = temp.Domain;
                 lView.SelectedItems[0].SubItems[1].Text = temp.Username;
                 lView.SelectedItems[0].SubItems[2].Text = temp.Password;
             }
@@ -122,6 +128,15 @@ namespace PasswordEncryptionApplication.Controller
         public Boolean CheckMasterKey(String masterKey)
         {
             return (masterKey == ConfigManager.MasterKey);
+        }
+
+        /// <summary>
+        /// Add an entry. Should be called from the AddForm.
+        /// </summary>
+        /// <param name="e">The entry to add.</param>
+        public void AddEntry(Entry e)
+        {
+            EntryFactory.Add(e);
         }
     
 

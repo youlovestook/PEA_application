@@ -19,9 +19,11 @@ namespace PasswordEncryptionApplication.Model
 
         public static void Save()
         {
-            //Doesn't work!!
-            ConfigurationManager.AppSettings.Set("Email", "Test");
-            ConfigurationManager.AppSettings["Master"] = MasterKey;
+            //Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            //config.ConnectionStrings.ConnectionStrings["Email"].ConnectionString = "Test";
+            //config.ConnectionStrings.ConnectionStrings["Master"].ConnectionString = MasterKey;
+            //config.Save();
+            //return;
         }
     }
 }

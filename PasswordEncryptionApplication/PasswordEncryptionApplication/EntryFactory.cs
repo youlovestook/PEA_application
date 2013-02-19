@@ -38,7 +38,7 @@ namespace PasswordEncryptionApplication.Model
         }
 
         /// <summary>
-        /// Add to the list.
+        /// Add an Entry to the list. This method encrypts the entry before adding.
         /// </summary>
         /// <param name="e">Entry object</param>
         public static void Add(Entry e)
