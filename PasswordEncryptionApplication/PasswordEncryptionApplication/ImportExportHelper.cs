@@ -46,7 +46,7 @@ namespace PasswordEncryptionApplication.Model
         /// <summary>
         /// Exports the contents of the arraylist to the specified file.
         /// </summary>
-        /// <param name="entries"></param>
+        /// <param name="entries">The list of entries</param>
         public void ExportToFile(ArrayList entries)
         {
             String toWrite = "";

@@ -35,13 +35,8 @@ namespace PasswordEncryptionApplication.Controller
             ConfigManager.Save();
         }
 
-        public void SaveConfigSettings(String email, String masterKey)
-        {
-            
-        }
-
         /// <summary>
-        /// Opens the specified Form
+        /// Tells the ViewManager to open the specified form.
         /// </summary>
         /// <param name="formName">Name of the form. Case Sensitive.</param>
         public void OpenForm(String formName)
