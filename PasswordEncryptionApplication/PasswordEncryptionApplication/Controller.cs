@@ -19,6 +19,7 @@ namespace PasswordEncryptionApplication.Controller
         /// </summary>
         public void Start(ListView lView)
         {
+            //OpenForm("MainForm");
             PasswordIsValidated = false;
             ConfigManager.Load();
             ImportEntries();

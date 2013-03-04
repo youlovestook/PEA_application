@@ -17,6 +17,10 @@ namespace PasswordEncryptionApplication.View
         {
             switch (threadName)
             {
+                case "MainForm":
+                    Thread mainForm = new Thread(new ThreadStart(openMainForm));
+                    mainForm.Start();
+                    break;
                 case "AddForm":
                     Thread addForm = new Thread(new ThreadStart(openAddForm));
                     addForm.Start();
@@ -32,6 +36,11 @@ namespace PasswordEncryptionApplication.View
                 default:
                     throw new Exception(threadName + " not supported.");
             }
+        }
+
+        private static void openMainForm()
+        {
+            Application.Run(new MainForm());
         }
 
         /// <summary>
