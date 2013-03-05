@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.domainTab = new System.Windows.Forms.TabPage();
             this.domainListView = new System.Windows.Forms.ListView();
@@ -45,6 +46,7 @@
             this.editBtn = new System.Windows.Forms.Button();
             this.removeBtn = new System.Windows.Forms.Button();
             this.changeMasterKeyBtn = new System.Windows.Forms.Button();
+            this.forgotPassBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.domainTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -210,11 +212,21 @@
             this.changeMasterKeyBtn.UseVisualStyleBackColor = true;
             this.changeMasterKeyBtn.Click += new System.EventHandler(this.changeMasterKeyBtn_Click);
             // 
+            // forgotPassBtn
+            // 
+            this.forgotPassBtn.Location = new System.Drawing.Point(314, 403);
+            this.forgotPassBtn.Name = "forgotPassBtn";
+            this.forgotPassBtn.Size = new System.Drawing.Size(104, 23);
+            this.forgotPassBtn.TabIndex = 5;
+            this.forgotPassBtn.Text = "Forgot Master Key";
+            this.forgotPassBtn.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 438);
+            this.Controls.Add(this.forgotPassBtn);
             this.Controls.Add(this.changeMasterKeyBtn);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.editBtn);
@@ -222,6 +234,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(512, 476);
             this.Name = "MainForm";
@@ -256,6 +269,7 @@
         private System.Windows.Forms.ColumnHeader domainColumn;
         private System.Windows.Forms.ColumnHeader usernameColumn;
         private System.Windows.Forms.ColumnHeader passwordColumn;
+        private System.Windows.Forms.Button forgotPassBtn;
     }
 }
 
