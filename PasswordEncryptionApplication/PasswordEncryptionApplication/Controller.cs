@@ -19,13 +19,11 @@ namespace PasswordEncryptionApplication.Controller
         /// </summary>
         public void Start(ListView lView)
         {
-            EntryFactory.Add(new Entry("OkCupid", "", ""));
-            EntryFactory.Add(new Entry("ChristianMingle", "", ""));
-            EntryFactory.Add(new Entry("", "", ""));
-            EntryFactory.Add(new Entry("", "", ""));
-            EntryFactory.Add(new Entry("", "", ""));
-            EntryFactory.Add(new Entry("", "", ""));
-            EntryFactory.Add(new Entry("", "", ""));
+            //EntryFactory.Add(new Entry("OkCupid", "StrongButSilent", "TigerShark"));
+            //EntryFactory.Add(new Entry("ChristianMingle", "SweatpantsMike", "coolGuy300"));
+            //EntryFactory.Add(new Entry("Amazon", "KingCobra81", "bestPassword"));
+            //EntryFactory.Add(new Entry("Swingles", "SugarBear", "12345Six"));
+            //EntryFactory.Add(new Entry("Google", "YouGetThe", "Point"));
 
             PasswordIsValidated = false;
             ConfigManager.Load();
