@@ -19,10 +19,17 @@ namespace PasswordEncryptionApplication.Controller
         /// </summary>
         public void Start(ListView lView)
         {
-            //OpenForm("MainForm");
+            EntryFactory.Add(new Entry("OkCupid", "", ""));
+            EntryFactory.Add(new Entry("ChristianMingle", "", ""));
+            EntryFactory.Add(new Entry("", "", ""));
+            EntryFactory.Add(new Entry("", "", ""));
+            EntryFactory.Add(new Entry("", "", ""));
+            EntryFactory.Add(new Entry("", "", ""));
+            EntryFactory.Add(new Entry("", "", ""));
+
             PasswordIsValidated = false;
             ConfigManager.Load();
-            ImportEntries();
+            importEntries();
             DisplayEntries(lView);
         }
 
@@ -48,7 +55,7 @@ namespace PasswordEncryptionApplication.Controller
         /// <summary>
         /// Import the entries from the save file into Entry objects.
         /// </summary>
-        public void ImportEntries()
+        private void importEntries()
         {
             ImportExportHelper impExpHelper = new ImportExportHelper("pf.txt");
             EntryFactory.CreateEntries(impExpHelper.ImportFile());
