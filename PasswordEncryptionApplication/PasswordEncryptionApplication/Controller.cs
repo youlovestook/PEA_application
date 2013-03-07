@@ -17,18 +17,12 @@ namespace PasswordEncryptionApplication.Controller
         /// <summary>
         /// Specifies what the Application does on start.
         /// </summary>
-        public void Start(ListView lView)
+        public void Start()
         {
-            //EntryFactory.Add(new Entry("OkCupid", "StrongButSilent", "TigerShark"));
-            //EntryFactory.Add(new Entry("ChristianMingle", "SweatpantsMike", "coolGuy300"));
-            //EntryFactory.Add(new Entry("Amazon", "KingCobra81", "bestPassword"));
-            //EntryFactory.Add(new Entry("Swingles", "SugarBear", "12345Six"));
-            //EntryFactory.Add(new Entry("Google", "YouGetThe", "Point"));
-
             PasswordIsValidated = false;
             ConfigManager.Load();
+            OpenForm("MainForm");
             importEntries();
-            DisplayEntries(lView);
         }
 
         /// <summary>
@@ -36,7 +30,7 @@ namespace PasswordEncryptionApplication.Controller
         /// </summary>
         public void Close()
         {
-            ImportExportHelper impExpHelper = new ImportExportHelper("pf.txt");
+            ImportExportHelper impExpHelper = new ImportExportHelper("pf");
             impExpHelper.ExportToFile(EntryFactory.GetList());
             ConfigManager.Save();
         }
@@ -55,7 +49,7 @@ namespace PasswordEncryptionApplication.Controller
         /// </summary>
         private void importEntries()
         {
-            ImportExportHelper impExpHelper = new ImportExportHelper("pf.txt");
+            ImportExportHelper impExpHelper = new ImportExportHelper("pf");
             EntryFactory.CreateEntries(impExpHelper.ImportFile());
         }
 

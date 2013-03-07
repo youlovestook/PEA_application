@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using PasswordEncryptionApplication.View;
+using PasswordEncryptionApplication.Controller;
 
 namespace PasswordEncryptionApplication
 {
@@ -16,7 +17,8 @@ namespace PasswordEncryptionApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Controller.Controller controller = new Controller.Controller();
+            controller.Start();
         }
     }
 }
