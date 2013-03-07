@@ -30,7 +30,7 @@ namespace PasswordEncryptionApplication.Controller
         /// </summary>
         public void Close()
         {
-            ImportExportHelper impExpHelper = new ImportExportHelper("pf");
+            ImportExportHelper impExpHelper = new ImportExportHelper(".pea");
             impExpHelper.ExportToFile(EntryFactory.GetList());
             ConfigManager.Save();
         }
@@ -49,7 +49,7 @@ namespace PasswordEncryptionApplication.Controller
         /// </summary>
         private void importEntries()
         {
-            ImportExportHelper impExpHelper = new ImportExportHelper("pf");
+            ImportExportHelper impExpHelper = new ImportExportHelper(".pea");
             EntryFactory.CreateEntries(impExpHelper.ImportFile());
         }
 

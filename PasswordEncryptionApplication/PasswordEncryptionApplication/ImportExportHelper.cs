@@ -38,7 +38,7 @@ namespace PasswordEncryptionApplication.Model
             else
             {
                 File.Create(filename);
-                return new String[]{""}; //fix
+                return new String[]{"", "", ""}; //fix
             }
 
            
