@@ -41,11 +41,11 @@ namespace PasswordEncryptionApplication.Model
         /// Add an Entry to the list. This method encrypts the entry before adding.
         /// </summary>
         /// <param name="e">Entry object</param>
-        public static void Add(Entry e)
+        public static void Add(String[] e)
         {
-            String d = Cryption.Encrypt<AesManaged>(e.Domain, "Test", "salt");
-            String u = Cryption.Encrypt<AesManaged>(e.Username, "Test", "salt");
-            String p = Cryption.Encrypt<AesManaged>(e.Password, "Test", "salt");
+            String d = Cryption.Encrypt<AesManaged>(e[0], "Test", "salt");
+            String u = Cryption.Encrypt<AesManaged>(e[1], "Test", "salt");
+            String p = Cryption.Encrypt<AesManaged>(e[2], "Test", "salt");
             entryList.Add(new Entry(d, u, p));
         }
 

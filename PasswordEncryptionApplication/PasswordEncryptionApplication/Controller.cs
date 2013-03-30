@@ -87,10 +87,10 @@ namespace PasswordEncryptionApplication.Controller
                             Cryption.Encrypt<AesManaged>(password, masterKey, "salt")
                            };
 
-            Entry temp = EntryFactory.CreateTempEntry(row);
-            lView.SelectedItems[0].SubItems[0].Text = temp.Domain;
-            lView.SelectedItems[0].SubItems[1].Text = temp.Username;
-            lView.SelectedItems[0].SubItems[2].Text = temp.Password;
+            //Entry temp = EntryFactory.CreateTempEntry(row);
+            lView.SelectedItems[0].SubItems[0].Text = row[0];
+            lView.SelectedItems[0].SubItems[1].Text = row[1];
+            lView.SelectedItems[0].SubItems[2].Text = row[2];
         }
 
 
@@ -101,6 +101,7 @@ namespace PasswordEncryptionApplication.Controller
         /// <param name="masterKey">The masterkey</param>
         public void DecryptRow(ListView lView, String masterKey)
         {
+            
             if (PasswordIsValidated)
             {
                 String domain = lView.SelectedItems[0].SubItems[0].Text;
@@ -113,10 +114,10 @@ namespace PasswordEncryptionApplication.Controller
                             Cryption.Decrypt<AesManaged>(password, masterKey, "salt")
                            };
 
-                Entry temp = EntryFactory.CreateTempEntry(row);
-                lView.SelectedItems[0].SubItems[0].Text = temp.Domain;
-                lView.SelectedItems[0].SubItems[1].Text = temp.Username;
-                lView.SelectedItems[0].SubItems[2].Text = temp.Password;
+                //Entry temp = EntryFactory.CreateTempEntry(row);
+                lView.SelectedItems[0].SubItems[0].Text = row[0];
+                lView.SelectedItems[0].SubItems[1].Text = row[1];
+                lView.SelectedItems[0].SubItems[2].Text = row[2];
             }
         }
 
@@ -129,7 +130,7 @@ namespace PasswordEncryptionApplication.Controller
         /// Add an entry. Should be called from the AddForm.
         /// </summary>
         /// <param name="e">The entry to add.</param>
-        public void AddEntry(Entry e)
+        public void AddEntry(String[] e)
         {
             EntryFactory.Add(e);
         }
