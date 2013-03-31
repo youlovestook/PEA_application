@@ -8,7 +8,7 @@ namespace PasswordEncryptionApplication.Model
 {
     class ConfigManager
     {
-        private bool isFirstRun;
+        public bool IsFirstRun { get; set; }
         public static String Email { get; set; }
         public static String MasterKey { get; set; }
 
